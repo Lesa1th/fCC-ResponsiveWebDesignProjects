@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Technical Documentation Page">
+    <title>Technical Documentation Page - freeCodeCamp</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main id="main-doc">
+        <nav id="navbar">
+            <header>Documentação Docker</header>
+            <ul>
+                <li>
+                    <a class="nav-link" href="#Introducao">Introducao</a>
+                </li>
+                <li>
+                    <a class="nav-link" href="#O_que_e_um_Container">O que e um Container</a>
+                </li>
+                <li>
+                    <a class="nav-link" href="#Instalando_o_Docker">Instalando o Docker</a>
+                </li>
+                <li>
+                    <a class="nav-link" href="#Criando_o_Dockerfile">Criando o Dockerfile</a>
+                </li>
+                <li>
+                    <a class="nav-link" href="#Trabalhando_com_imagens">Trabalhando com imagens</a>
+                </li>
+                <li>
+                    <a class="nav-link" href="#Gerenciando_containers">Gerenciando containers</a>
+                </li>
+            </ul>
+        </nav>
+        <section class="main-section" id="Introducao">
+
+            <header>Introducao</header>
+
+            <p>O Docker é uma plataforma de código aberto que permite criar, enviar e executar aplicativos dentro de containers. Esses containers são ambientes isolados, leves e portáteis, o que facilita a execução de aplicações de maneira consistente, seja no desenvolvimento, testes ou produção. O uso de containers também melhora a escalabilidade e a segurança, já que cada aplicação pode ser isolada, impedindo que problemas em uma afetem outras.</p>
+            <p>Ao utilizar o Docker, você pode garantir que seu software rode da mesma maneira em qualquer sistema, independente das diferenças entre os ambientes. Isso é possível porque o Docker empacota o aplicativo com todas as suas dependências, criando uma imagem que pode ser executada de forma consistente em qualquer máquina que tenha o Docker instalado.</p>
+
+        </section>
+        <section class="main-section" id="O_que_e_um_Container">
+            <header>O que e um Container</header>
+            <p>Um container Docker é uma unidade de software que contém tudo o que é necessário para executar uma aplicação: o código, as bibliotecas, as dependências e as configurações. A principal vantagem dos containers é o seu isolamento, permitindo que múltiplos containers rodem no mesmo sistema sem interferir entre si, o que facilita o gerenciamento de diferentes versões e ambientes de desenvolvimento.</p>
+            <p>Além disso, os containers Docker são mais eficientes do que as máquinas virtuais tradicionais, pois não necessitam de um sistema operacional completo. Em vez disso, eles compartilham o kernel do sistema operacional do host, o que reduz significativamente o consumo de recursos, como memória e CPU.</p>
+            <code># Para rodar um container Docker com uma imagem do Ubuntu
+                docker run -it ubuntu</code>
+            <ul>
+            <li>Isolamento de Processos: O container proporciona o isolamento necessário para que os processos não interfiram uns nos outros, garantindo maior estabilidade.</li>
+            <li>Eficiência de Recursos: Ao invés de rodar uma máquina virtual inteira, o Docker compartilha o kernel do sistema operacional, economizando recursos de hardware.</li>
+            </ul>
+        </section>
+        <section class="main-section" id="Instalando_o_Docker">
+            <header>Instalando o Docker</header>
+            <p>A instalação do Docker é simples, mas varia dependendo do sistema operacional. No caso de sistemas baseados em Linux, como o Ubuntu, você pode instalar o Docker diretamente dos repositórios oficiais usando o gerenciador de pacotes APT. Já no Windows e no macOS, o mais recomendado é usar o Docker Desktop, que oferece uma interface gráfica e facilita a integração com o sistema operacional.</p>
+            <p>Após a instalação, é importante garantir que o Docker esteja configurado corretamente. Para isso, você pode rodar o comando [docker --version], que vai exibir a versão instalada, confirmando que o Docker está pronto para uso. Caso haja algum erro, a documentação oficial fornece guias detalhados para solução de problemas.</p>
+            <code># No Ubuntu, para instalar o Docker, use o comando:
+                sudo apt-get install docker-ce</code>
+            <ul>
+            <li>No Ubuntu: A instalação do Docker pode ser feita via APT.</li>
+            <li>No Windows: É recomendado usar o Docker Desktop para facilitar o uso no Windows.</li>
+            </ul>
+        </section>
+        <section class="main-section" id="Criando_o_Dockerfile">
+            <header>Criando o Dockerfile</header>
+            <p>O Dockerfile é um arquivo de texto que descreve o processo de construção de uma imagem Docker personalizada. Ele contém uma série de comandos que definem a base de imagem a ser utilizada, instalam as dependências necessárias e configuram o ambiente de execução do aplicativo. Cada comando no Dockerfile representa uma etapa na construção da imagem.</p>
+            <p>Uma das instruções mais comuns no Dockerfile é o comando RUN, que executa comandos dentro da imagem durante a construção. Também é comum o uso da instrução COPY, que permite copiar arquivos locais para dentro do container, e o CMD, que define o comando a ser executado quando o container for iniciado.</p>
+            <code># Exemplo de Dockerfile para uma aplicação Node.js
+                FROM node:14
+                WORKDIR /app
+                COPY . .
+                RUN npm install
+                CMD ["node", "index.js"]</code>
+            <ul>
+            <li>Instrução FROM: Define a imagem base para o container.</li>
+            <li>Instrução RUN: Permite executar comandos durante o processo de construção da imagem.</li>
+            </ul>
+        </section>
+        <section class="main-section" id="Trabalhando_com_imagens">
+            <header>Trabalhando com imagens</header>
+            <p>Uma imagem Docker é uma versão imutável de um container, que pode ser distribuída e reutilizada em diferentes ambientes. Depois de criar sua imagem a partir de um Dockerfile, você pode publicá-la em um registro de imagens, como o Docker Hub, para que outras pessoas ou sistemas possam usá-la facilmente. O Docker Hub é um repositório online onde você pode buscar, armazenar e compartilhar imagens.</p>
+            <p>Com o comando [docker build], você pode construir imagens a partir de um Dockerfile. As imagens podem ser armazenadas localmente ou enviadas para um repositório remoto. Além disso, você pode usar o comando [docker images] para listar todas as imagens disponíveis no seu sistema e verificar suas tags e tamanhos.</p>
+            <code># Para construir uma imagem a partir de um Dockerfile
+                docker build -t minha-imagem .</code>
+            <ul>
+            <li>Criar uma Imagem: Use o comando docker build para construir a imagem a partir de um Dockerfile.</li>
+            <li>Listar Imagens: O comando docker images lista todas as imagens disponíveis no seu sistema.</li>
+            </ul>
+        </section>
+        <section class="main-section" id="Gerenciando_containers">
+            <header>Gerenciando containers</header>
+            <p>Uma das maiores vantagens do Docker é a facilidade com que é possível gerenciar containers. Com apenas alguns comandos, você pode iniciar, parar, listar e até remover containers conforme necessário. Isso torna o desenvolvimento e a manutenção de aplicações mais ágeis, além de permitir o uso eficiente dos recursos do sistema.</p>
+            <p>Por exemplo, o comando [docker run] inicia um novo container a partir de uma imagem existente, enquanto [docker ps] lista todos os containers em execução. Se você precisar parar um container, pode usar o comando [docker stop]. Para remover containers e imagens que não são mais necessários, o comando [docker rm] pode ser utilizado.</p>
+            <code># Para listar os containers em execução
+                docker ps</code>
+            <ul>
+            <li>Iniciar um Container: O comando [docker run] permite rodar um container baseado em uma imagem.</li>
+            <li>Verificar o Status: O comando [docker ps] mostra os containers em execução no sistema.</li>
+            </ul>
+        </section>
+    </main>
+    
+</body>
+</html>
