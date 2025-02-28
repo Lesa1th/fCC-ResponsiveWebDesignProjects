@@ -4,15 +4,156 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Landing Page</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header id="header">
-        <img src="" alt="" id="header-img"/>
-        <nav id="nav-bar">
-            
-        </nav>
-    </header>
-    
+    <div id="page-wrapper">
+
+        <!-- faltando colocar o logo, nav completo-->
+        <header id="header">
+
+            <!--logo faltando-->
+            <div class="logo">
+                <img src="" alt="" id="header-img"/>
+                <h2 class="store-name-logo">Fleur et Charme</h2>
+            </div>
+
+            <!--nav concluido-->
+            <nav id="nav-bar">
+                <ul>
+                    <li><a href="#Features" class="nav-link">Features</a></li>
+                    <li><a href="#Taking-care-of-flowers" class="nav-link">Taking care of Flowers</a></li>
+                    <li><a href="#Pricing" class="nav-link">Pricing</a></li>
+                </ul>
+            </nav>
+        </header>
+        
+        <!--hero conteudo completo-->
+        <div class="container">
+            <section id="hero">
+                <h2>Do you want to win an 80% discount coupon in our store?</h2>
+                <form id="form" action="https://www.freecodecamp.com/email-submit">
+                    <input name="email" id="email" type="email" placeholder="Enter you email address" required>
+                    <input id="submit" type="submit" name="email-submit" value="Submit">
+                </form>
+            </section>
+        </div>
+
+        <!--Todos conteudos do html menos o footer e o princing faltando -->
+        <div class="container">
+
+            <!--Section features icons faltando-->
+            <section id="Features">
+                <!--icon faltando em todos grids-->
+                <div class="grid">
+                    <div class="icon">
+                        <i class="flwr"></i>
+                    </div>
+                    <div class="desc">
+                        <h2>Fresh Flowers:</h2>
+                        <p>Handpicked daily to ensure maximum longevity and freshness.</p>
+                    </div>
+                </div>
+                <div class="grid">
+                    <div class="icon">
+                        <i class="flwr"></i>
+                    </div>
+                    <div class="desc">
+                        <h2>Customized Arrangements:</h2>
+                        <p>Create your own bouquet or choose from our exclusive combinations.</p>
+                    </div>
+                </div>
+                <div class="grid">
+                    <div class="icon">
+                        <i class="flwr"></i>
+                    </div>
+                    <div class="desc">
+                        <h2>Fast and Secure Delivery:</h2>
+                        <p>We bring the beauty of flowers to you with utmost care.</p>
+                    </div>
+                </div>
+                <div class="grid">
+                    <div class="icon">
+                        <i class="flwr"></i>
+                    </div>
+                    <div class="desc">
+                        <h2>Sustainability:</h2>
+                        <p>We work with suppliers who respect the environment.</p>
+                    </div>
+                </div>
+                <div class="grid">
+                    <div class="icon">
+                        <i class="flwr"></i>
+                    </div>
+                    <div class="desc">
+                        <h2>Elegant Packaging:</h2>
+                        <p> Impeccable presentation for any special occasion.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!--Video faltando-->
+            <section id="Taking-care-of-flowers">
+
+                <h2 class="video-title">How to take care of our bouquets at home.</h2>
+                <p class="video-subtitle">Watch this YouTube video with essential tips to keep your flowers looking beautiful for longer:</p>
+                <!--OBS.:pesquisar a documentação do iframe quando for adicionar o video-->
+                <iframe id="video" title="How to take care of your bouquets at home" src=""></iframe>
+
+            </section>
+
+            <!--Section princing conteudo concluido-->
+            <section id="Pricing">
+                <div class="service-plans" id="essential">
+                    <div class="plan">Essential Plan</div>
+                    <h2>$99.90</h2>
+                    <ol>
+                        <li>Standard bouquet with 10 stems of mixed flowers.</li>
+                        <li>Simple and elegant packaging.</li>
+                        <li>Delivery within 48 hours.</li>
+                    </ol>
+                    <button type="submit" name="essentialBt" class="btn">Select</button>
+                </div>
+                <div class="service-plans" id="premium">
+                    <div class="plan">Premium Plan</div>
+                    <h2>$199.90</h2>
+                    <ol>
+                        <li>Personalized bouquet with 20 stems of premium flowers.</li>
+                        <li>Sophisticated packaging and personalized card.</li>
+                        <li>Delivery within 24 hours with tracking.</li>
+                    </ol>
+                    <button type="submit" name="premiumBt" class="btn">Select</button>
+                </div>
+                <div class="service-plans" id="luxury">
+                    <div class="plan">Luxury Plan</div>
+                    <h2>$349.90</h2>
+                    <ol>
+                        <li>Exclusive bouquet with 30 stems of imported flowers.</li>
+                        <li>Luxury packaging and special fragrance.</li>
+                        <li>Same-day express delivery.</li>
+                        <li>Consultation for choosing flowers for special occasions.</li>
+                    </ol>
+                    <button type="submit" name="luxuryBt" class="btn">Select</button>
+                </div>
+            </section>
+
+            <!--Footer html completo-->
+            <footer>
+                <ul>
+                    <li>
+                        <a href="#">Privacy</a>
+                    </li>
+                    <li>
+                        <a href="#">Terms</a>
+                    </li>
+                    <li>
+                        <a href="#">Contact</a>
+                    </li>
+                </ul>
+                <span>Copyright 2025, Fleur et Charme</span>
+            </footer>
+        </div>
+    </div>
 </body>
 </html>
