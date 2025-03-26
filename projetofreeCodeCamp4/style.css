@@ -137,6 +137,7 @@ span{
 #flwr{
     max-width: 10vw;
     min-width: 5vw;
+    margin-right: 0.5vw;
 }
 
 .desc{
@@ -180,4 +181,51 @@ input[type=submit] {
 
 #hero{
     margin-bottom: 10vw;
+}
+
+.plan > h1{
+    font-family: Sour Gummy;
+    color: var(--color1);
+    font-size: 2.8vw;
+}
+
+.service-plans > h2{
+    font-family: Sour Gummy;
+    color: var(--color2);
+    font-size: 3.8vw;
+}
+
+.service-plans > button {
+    background-color: var(--color3);
+    border: none;
+    cursor: pointer;
+    padding: 1vw 2.7vw;
+    border-radius: 40%;
+    color: var(--color4);
+    font-family: Sour Gummy;
+    font-size: 2vw;
+}
+
+.service-plans{
+    border: 0.2vw solid var(--color5);
+    width: 38vw;
+    height: 45vw;
+    display:block;
+    margin: 3vw auto 3vw auto;
+    padding: 2vw 2vw 4vw 2vw;
+    
+}
+
+.service-plans > ol {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 4vw;
+}
+
+#Pricing{
+    display: inline-grid;
+}
+
+ol > li{
+    margin-bottom: 3vw;
 }
