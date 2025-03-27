@@ -1,5 +1,4 @@
-/* paleta de cores pro site: https://paletadecores.com/paleta/5e1f28/8a2f2e/ae5543/f7bb75/83764c/ 
-alternativa: https://paletadecores.com/paleta/4c3d31/f18273/f2bd76/f4f5de/c4ceb0/*/
+/* paleta de cores pro site: https://paletadecores.com/paleta/4c3d31/f18273/f2bd76/f4f5de/c4ceb0/*/
 
 :root{
     --color1: #4c3d31;
@@ -9,12 +8,18 @@ alternativa: https://paletadecores.com/paleta/4c3d31/f18273/f2bd76/f4f5de/c4ceb0
     --color5: #c4ceb0;
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
 html, body{
     background-color: var(--color4);
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
+/*header stuff*/
 
 #header{
     width: 100%;
@@ -27,7 +32,6 @@ html, body{
     background-color: var(--color5);
     position: fixed;
 }
-
 
 .store-name-logo{
     display: inline-block;
@@ -92,9 +96,10 @@ a:link{
     text-decoration: none;
     font-family: Sour Gummy;
 }
+
 /*hovered link*/
 a:hover{
-    color:var(--color1);
+    color:var(--color4);
 }
 
 a:visited{
@@ -105,15 +110,24 @@ a:visited{
 a:active{
     color: var(--color3);
 }
+/*end of header stuff*/
 
 /*footer stuff*/
-
 footer{
     background-color: var(--color5);
+    width: 100%;
+    overflow-x: auto;
 }
+
+footer > ul{
+    font-size: 1.6vw;
+}
+
 span{
     color: var(--color1);
+    font-size: 1vw;
 }
+/*end of footer stuff*/
 
 #features{
     display: flex;
@@ -213,6 +227,7 @@ input[type=submit] {
     display:block;
     margin: 3vw auto 3vw auto;
     padding: 2vw 2vw 4vw 2vw;
+    border-radius: 15%;
     
 }
 
@@ -223,9 +238,38 @@ input[type=submit] {
 }
 
 #Pricing{
-    display: inline-grid;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
 }
 
 ol > li{
     margin-bottom: 3vw;
+}
+
+/*video stuff*/
+#Taking-care-of-flowers > h2{
+    color: var(--color1);
+    font-family: Sour Gummy;
+    font-size: 3vw;
+}
+
+iframe{
+    width: 60vw;
+    height: 35vw;
+}
+/*end of video stuff*/
+
+/*media query stuff*/
+
+@media (max-width= 800px){
+
+    #Pricing{
+        flex-wrap: nowrap;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    
 }
